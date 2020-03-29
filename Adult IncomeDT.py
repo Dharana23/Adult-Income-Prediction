@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv('C:/Users/kain_/Downloads/Course Files/007 - Classification/Adult Income.csv')
+data = pd.read_csv('Adult Income.csv')
 data.isnull().sum(axis=0)
 data.dtypes
 
