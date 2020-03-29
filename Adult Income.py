@@ -13,6 +13,7 @@ from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, random_state=1234, stratify=Y)
 
+#Decision Tree
 from sklearn.tree import DecisionTreeClassifier
 
 dtc = DecisionTreeClassifier(random_state=1234)
