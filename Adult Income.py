@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv('Adult Income.csv')
+data = pd.read_csv('C:/Users/kain_/Downloads/Course Files/007 - Classification/Adult Income.csv')
 data.isnull().sum(axis=0)
 data.dtypes
 
@@ -13,14 +13,12 @@ from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, random_state=1234, stratify=Y)
 
-#Decision Tree
-from sklearn.tree import DecisionTreeClassifier
-
-dtc = DecisionTreeClassifier(random_state=1234)
-dtc.fit(X_train, y_train)
-y_predict = dtc.predict(X_test)
-
 from sklearn.metrics import confusion_matrix
+from sklearn.ensemble import RandomForestClassifier
 
-cm = confusion_matrix(y_test, y_predict)
-score = dtc.score(X_test, y_test)
+rfc = RandomForestClassifier(random_state=1234)
+rfc.fit(X_train, y_train)
+y_predict = rfc.predict(X_test)
+
+cm2 = confusion_matrix(y_test, y_predict)
+score2 = rfc.score(X_test, y_test)
